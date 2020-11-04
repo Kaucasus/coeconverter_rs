@@ -19,7 +19,11 @@
                     "kind": "bin"
                 }
             },
-            "args": [],
+            "args": [
+                "${workspaceFolder}/tests/${input:selectImage}",
+                "${input:selectMode}",
+                "${input:cliArgs}"
+            ],
             "cwd": "${workspaceFolder}"
         },
         {
@@ -40,6 +44,35 @@
             },
             "args": [],
             "cwd": "${workspaceFolder}"
+        }
+    ],
+    "inputs": [
+        {
+            "id": "cliArgs",
+            "type": "promptString",
+            "description": "input cli arguments"
+        },
+        {
+            "id": "selectImage",
+            "type": "pickString",
+            "description": "Select image",
+            "options": [
+                "base_test_image.png",
+                "test_no_alpha"
+            ],
+            "default": "base_test_image.png"
+        },
+        {
+            "id": "selectMode",
+            "type": "pickString",
+            "description": "Select mode",
+            "options": [
+                "HDMI",
+                "VGA",
+                "Gray",
+                "Bit"
+            ],
+            "default": "HDMI"
         }
     ]
 }
