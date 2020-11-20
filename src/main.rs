@@ -158,8 +158,8 @@ fn build_file(coe: CoeInfo) -> String {
         ;The image has a width: {image_width} and height: {image_height}\n\
         ;The memory has a width={mem_width}, and depth={mem_depth}\n\
         ;(So that means addra is {address_width} if minimum area 8kx2 is used) \n\
-        memory_initialization_radix={radix}\n\
-        memory_initialization_vector={vector}",
+        memory_initialization_radix={radix};\n\
+        memory_initialization_vector={vector};",
         mode = coe.mode,
         image_width = coe.image_width,
         image_height = coe.image_height,
