@@ -142,7 +142,7 @@ fn build_info(
         mem_depth: (image_width as u64) * (image_height as u64),
         mem_width,
         address_width: (((image_width as u64) * (image_height as u64)) as f64)
-            .sqrt()
+            .log2()
             .ceil() as u32,
         memory_init_radix: match rep {
             Representation::Bin => 2,
